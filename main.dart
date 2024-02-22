@@ -27,18 +27,21 @@ void main() {
       ]
     }
   ];
-  stdout.write("choose who you are ");
-  print("for teachers type teacher and for students type student");
+  print("Welcome to the class portal");
+  print("<teacher> or <student>");
   var choice = stdin.readLineSync();
   if (choice == "teacher") {
     print("you chose $choice");
     stdout.write("Enter your usermane :");
     var teacherusername = stdin.readLineSync();
     stdout.write("Enter your Password :");
-    var password = stdin.readLineSync();
-    if (teacherusername == "Salman ali" && password == "salman123") {
+    var teacherpassword = stdin.readLineSync();
+    if (teacherusername == "Razaq ahmed" && teacherpassword == "razaq123") {
       print(
-          "Login successfull, for view students details press 1, for view their attendence press 2, for view class activity press 3");
+          "--------------------------Login successfull------------------------- ");
+      print("1 for student details");
+      print("2 for class attendence");
+      print("3 for view class assignment");
       var forteacher = stdin.readLineSync();
       if (forteacher == "1") {
         for (var student in studentinfo) {
@@ -72,9 +75,10 @@ void main() {
     }
   } else if (choice == "student") {
     print("you chose $choice");
-
-    var teacherusername = stdin.readLineSync();
-    var password = stdin.readLineSync();
+    stdout.write("Enter your username :");
+    var studentusername = stdin.readLineSync();
+    stdout.write("Enter your password :");
+    var studentpassword = stdin.readLineSync();
   } else {
     print("invalid request, please try again!");
   }
