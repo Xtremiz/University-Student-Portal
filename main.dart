@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'func.dart';
 
 void main() {
   List<Map<String, dynamic>> teachersinfo = [
@@ -541,7 +542,8 @@ void main() {
           } else {
             for (var student in allstudents) {
               if (student['username'] == studentUsername) {
-                print("your marks :${student["marks"]}");
+                print(
+                    "your marks :${student["marks"]} and ${remarks(student["marks"])}");
                 break;
               }
             }
