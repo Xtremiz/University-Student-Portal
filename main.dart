@@ -13,42 +13,51 @@ void main() {
     {
       "username": "Rashid khan",
       "password": "rashid123",
+      "fees": "paid",
       "attendaince": "56%",
-      "marks": {"maths": 61, "physics": 64, "chem": 63}
+      "marks": 59
     },
     {
-      "username": "Muhammed Murtaza",
+      "username": "Muhammed Murtuza",
       "password": "Murtuza123",
+      "fees": "unpaid",
       "attendaince": "69%",
-      "marks": {"maths": 71, "physics": 74, "chem": 73}
+      "marks": 65
     },
     {
       "username": "Maaz Arif",
-      "password": "Maaz123",
+      "password": "maaz123",
+      "fees": "paid",
       "attendaince": "86%",
-      "marks": {"maths": 81, "physics": 84, "chem": 83}
+      "marks": 73
     }
   ];
   List<Map<String, dynamic>> ahmedclass = [
     {
       "username": "Ali raza",
       "password": "ali123",
+      "fees": "unpaid",
       "attendaince": "65%",
-      "marks": {"maths": 66, "physics": 68, "chem": 67}
+      "marks": 76
     },
     {
       "username": "Muhammed Nabi",
       "password": "Mnabi123",
+      "fees": "paid",
       "attendaince": "63%",
-      "marks": {"maths": 76, "physics": 77, "chem": 71}
+      "marks": 75
     },
     {
       "username": "Muhammed hammad",
       "password": "hammad123",
+      "fees": "halfpaid",
       "attendaince": "87%",
-      "marks": {"maths": 83, "physics": 87, "chem": 84}
+      "marks": 83
     }
   ];
+  List<Map<String, dynamic>> allstudents = [];
+  allstudents.addAll(bilalclass);
+  allstudents.addAll(ahmedclass);
 
   print("-------------WELCOME------------");
   print("what do you want to access");
@@ -81,7 +90,7 @@ void main() {
       for (var teachers in teachersinfo) {
         print("teachers username: ${teachers["username"]}");
         print("teacher crediblity: ${teachers["crediblity"]}");
-        print("------------------------------------------------------");
+        print(" ");
       }
     } else if (adminchoice == "2") {
       print("your choose student details");
@@ -101,7 +110,7 @@ void main() {
           print("usermane :${razaqstudent["username"]}");
           print("attendance :${razaqstudent["attendaince"]}");
           print("marks :${razaqstudent["marks"]}");
-          print("----------------------------------------------------");
+          print(" ");
         }
       } else {
         print("you choose Muhammed ahmed's class");
@@ -109,7 +118,7 @@ void main() {
           print("usermane :${ahmedstudent["username"]}");
           print("attendance :${ahmedstudent["attendaince"]}");
           print("marks :${ahmedstudent["marks"]}");
-          print("----------------------------------------------------");
+          print(" ");
         }
       }
     } else {
@@ -141,7 +150,7 @@ void main() {
           for (var teachers in teachersinfo) {
             print("username : ${teachers["username"]}");
             print("crediblity : ${teachers["crediblity"]}");
-            print("---------------------------------------------------");
+            print(" ");
           }
           stdout.write("now enter the username you want to add :");
           var addteacher = stdin.readLineSync();
@@ -156,7 +165,7 @@ void main() {
           for (var allteachers in teachersinfo) {
             print("username: ${allteachers["username"]}");
             print("crediblity: ${allteachers["crediblity"]}");
-            print("-----------------------------------------------------");
+            print(" ");
           }
         } else {
           print("you choose remove ");
@@ -164,7 +173,7 @@ void main() {
           for (var teachers in teachersinfo) {
             print("teachers username: ${teachers["username"]}");
             print("teacher crediblity: ${teachers["crediblity"]}");
-            print("------------------------------------------------------");
+            print(" ");
             stdout.write("Enter the username you want to remove :");
           }
           var removetea = stdin.readLineSync();
@@ -207,7 +216,7 @@ void main() {
               print("username : ${student1["username"]}");
               print("attendance : ${student1["attendaince"]}");
               print("marks : ${student1["marks"]}");
-              print("-----------------------------------------------");
+              print(" ");
             }
             stdout.write("now enter the username you want to add :");
             var addname1 = stdin.readLineSync();
@@ -225,7 +234,7 @@ void main() {
               print("username : ${student1["username"]}");
               print("attendance : ${student1["attendaince"]}");
               print("marks : ${student1["marks"]}");
-              print("-----------------------------------------------");
+              print(" ");
             }
           } else {
             print("you choose remove");
@@ -234,7 +243,7 @@ void main() {
               print("usermane :${bilalstudent["username"]}");
               print("attendance :${bilalstudent["attendaince"]}");
               print("marks :${bilalstudent["marks"]}");
-              print("----------------------------------------------------");
+              print(" ");
             }
             stdout.write("Enter the username you want to remove :");
             var remstu1 = stdin.readLineSync();
@@ -267,7 +276,7 @@ void main() {
               print("username : ${student1["username"]}");
               print("attendance : ${student1["attendaince"]}");
               print("marks : ${student1["marks"]}");
-              print("-----------------------------------------------");
+              print(" ");
             }
             stdout.write("now enter the username you want to add :");
             var addname2 = stdin.readLineSync();
@@ -284,7 +293,7 @@ void main() {
               print("username : ${student1["username"]}");
               print("attendance : ${student1["attendaince"]}");
               print("marks : ${student1["marks"]}");
-              print("-----------------------------------------------");
+              print(" ");
             }
           } else {
             print("you choose remove");
@@ -293,7 +302,7 @@ void main() {
               print("usermane :${ahmedstudent["username"]}");
               print("attendance :${ahmedstudent["attendaince"]}");
               print("marks :${ahmedstudent["marks"]}");
-              print("----------------------------------------------------");
+              print(" ");
             }
             stdout.write("Enter the username you want to remove :");
             var remstu2 = stdin.readLineSync();
@@ -340,27 +349,29 @@ void main() {
                 print("username: ${students["username"]}");
                 print("attendance: ${students["attendaince"]}");
                 print("marks: ${students["marks"]}");
-                print("-----------------------------------------------");
+                print("fees : ${students["fees"]}");
+                print(" ");
               }
             } else {
               for (var students in ahmedclass) {
                 print("username: ${students["username"]}");
                 print("attendance: ${students["attendaince"]}");
                 print("marks: ${students["marks"]}");
-                print("-----------------------------------------------");
+                print("fees : ${students["fees"]}");
+                print(" ");
               }
             }
+            break;
           } else {
             if (enteredUsername == "Bilal Rehman") {
               print("you choose edit");
-              print(
-                  "Note : you only able to edit neither remove nor add, and you are not able to edit student password");
+              print("Note : you only able to edit marks");
               print("Existing list");
               for (var student in bilalclass) {
                 print("username : ${student["username"]}");
                 print("attendance : ${student["attendaince"]}");
                 print("marks : ${student["marks"]}");
-                print("---------------------------------------");
+                print(" ");
               }
               stdout.write("type [confirm] to edit :");
               var confirmatry0 = stdin.readLineSync();
@@ -369,16 +380,48 @@ void main() {
                 stdout.write("Enter [confirm] to proceed :");
                 confirmatry0 = stdin.readLineSync();
               }
+              if (confirmatry0 == "confirm") {
+                bool found = false;
+                while (!found) {
+                  stdout.write("Enter the username to edit marks :");
+                  String? username = stdin.readLineSync();
+                  if (username != null) {
+                    for (var student in bilalclass) {
+                      if (student['username'] == username) {
+                        print(
+                            "Current marks for $username: ${student['marks']}");
+                        stdout.write("Enter new marks :");
+                        int newMarks = int.parse(stdin.readLineSync()!);
+                        student['marks'] = newMarks;
+                        print("Marks updated successfully!");
+                        found = true;
+                        break;
+                      }
+                    }
+
+                    if (!found) {
+                      print("User '$username' not found! Please try again.");
+                    } else {
+                      print("Updated class record:");
+                      for (var student in bilalclass) {
+                        print("username :${student["username"]}");
+                        print("attendance :${student["attendaince"]}");
+                        print("marks :${student["marks"]}");
+                        print(" ");
+                      }
+                    }
+                  }
+                }
+              }
             } else {
               print("you choose edit");
-              print(
-                  "Note : you only able to edit neither remove nor add, and you are not able to edit student password");
+              print("Note : you only able to edit marks");
               print("Existing list");
               for (var student in ahmedclass) {
                 print("username : ${student["username"]}");
                 print("attendance : ${student["attendaince"]}");
                 print("marks : ${student["marks"]}");
-                print("---------------------------------------");
+                print(" ");
               }
               stdout.write("type [confirm] to edit :");
               var confirmatry1 = stdin.readLineSync();
@@ -387,6 +430,49 @@ void main() {
                 stdout.write("Enter [confirm] to proceed :");
                 confirmatry1 = stdin.readLineSync();
               }
+              if (confirmatry1 == "confirm") {
+                bool found = false;
+                while (!found) {
+                  stdout.write("Enter the username to edit marks :");
+                  String? username = stdin.readLineSync();
+                  if (username != null) {
+                    for (var student in ahmedclass) {
+                      if (student['username'] == username) {
+                        print(
+                            "Current marks for $username: ${student['marks']}");
+                        stdout.write("Enter new marks :");
+                        int newMarks = int.parse(stdin.readLineSync()!);
+                        student['marks'] = newMarks;
+                        print("Marks updated successfully!");
+                        found = true;
+                        break;
+                      }
+                    }
+
+                    if (!found) {
+                      print("User '$username' not found! Please try again.");
+                    } else {
+                      print("Updated class record:");
+                      for (var student in ahmedclass) {
+                        print("username :${student["username"]}");
+                        print("attendance :${student["attendaince"]}");
+                        print("marks :${student["marks"]}");
+                        print(" ");
+                      }
+                    }
+                  }
+                }
+              }
+
+              void printStudents(List<Map<String, dynamic>> students) {
+                for (var student in students) {
+                  print("Username: ${student['username']}");
+                  print("Password: ${student['password']}");
+                  print("Attendance: ${student['attendance']}");
+                  print("Marks: ${student['marks']}");
+                  print("");
+                }
+              }
             }
 
             loginSuccessful = true;
@@ -394,7 +480,6 @@ void main() {
           }
         }
 
-        // If the login was not successful, prompt the user to try again
         if (!loginSuccessful) {
           print('Login failed. Please try again.');
         }
@@ -402,5 +487,73 @@ void main() {
     }
   } else {
     print("you choose $choice");
+    bool loginSuccessful = false;
+
+    while (!loginSuccessful) {
+      stdout.write('Enter your username :');
+      var studentUsername = stdin.readLineSync();
+      stdout.write('Enter your password :');
+      var studentPassword = stdin.readLineSync();
+
+      for (var student in allstudents) {
+        if (student['username'] == studentUsername &&
+            student['password'] == studentPassword) {
+          print('Login successful!');
+          print("WELCOME $studentUsername");
+          print("1 for your fee chalan");
+          print("2 for your assignment");
+          print("3 for your marks");
+          stdout.write("Enter your choice :");
+          var studentchoice = stdin.readLineSync();
+          while (studentchoice != "1" &&
+              studentchoice != "2" &&
+              studentchoice != "3") {
+            print("try again");
+            stdout.write("Enter the correct choice :");
+            studentchoice = stdin.readLineSync();
+          }
+          if (studentchoice == "1") {
+            for (var student in allstudents) {
+              if (student['username'] == studentUsername) {
+                if (student["fees"] == "paid") {
+                  print("your fees is paid");
+                } else if (student["fees"] == "halfpaid") {
+                  print(
+                      "you have to paid the rest of half of your fees by next 2 month, after that you will be withdrawal from the class");
+                } else {
+                  print(
+                      "you have to paid your fees by next month, after that you will be withdrawal from the class");
+                }
+                break;
+              }
+            }
+          } else if (studentchoice == "2") {
+            stdout.write("Enter [confirm] to get assigment :");
+            var assignment = stdin.readLineSync();
+            while (assignment != "confirm") {
+              print("try again");
+              stdout.write("Enter the correct choice :");
+              assignment = stdin.readLineSync();
+            }
+            if (assignment == "confirm") {
+              print("Assigment is coimng soon, stay tuned ");
+            }
+          } else {
+            for (var student in allstudents) {
+              if (student['username'] == studentUsername) {
+                print("your marks :${student["marks"]}");
+                break;
+              }
+            }
+          }
+          loginSuccessful = true;
+          break;
+        }
+      }
+
+      if (!loginSuccessful) {
+        print('Login failed. Please try again.');
+      }
+    }
   }
 }
